@@ -269,9 +269,9 @@
                         <title><![CDATA[]]></title>
                         <image><![CDATA[]]></image>
                         <image_alt><![CDATA[]]></image_alt>
-                        <display_pet_desk_banner><![CDATA[1]]></display_pet_desk_banner>
+                        <display_pet_desk_banner><![CDATA[0]]></display_pet_desk_banner>
                         <content><![CDATA[]]></content>
-                        <display_patient_forms><![CDATA[]]></display_patient_forms>
+                        <display_patient_forms><![CDATA[0]]></display_patient_forms>
                     </item>
                   </items>
                 </templateset>
