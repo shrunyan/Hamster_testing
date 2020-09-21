@@ -266,12 +266,12 @@
                 </fields>
                 <items>
                     <item link_title="Resources" path_part="resources">
-                        <title><![CDATA[Resources page]]></title>
+                        <title><![CDATA[]]></title>
                         <image><![CDATA[]]></image>
-                        <image_alt><![CDATA[image alt text]]></image_alt>
-                        <display_pet_desk_banner><![CDATA[1]]></display_pet_desk_banner>
-                        <content><![CDATA[resources page Content]]></content>
-                        <display_patient_forms><![CDATA[0]]></display_patient_forms>
+                        <image_alt><![CDATA[]]></image_alt>
+                        <display_pet_desk_banner><![CDATA[]]></display_pet_desk_banner>
+                        <content><![CDATA[]]></content>
+                        <display_patient_forms><![CDATA[]]></display_patient_forms>
                     </item>
                   </items>
                 </templateset>
