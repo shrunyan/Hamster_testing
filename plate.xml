@@ -403,7 +403,7 @@
                     <yes_no name="display_testimonials" name_friendly="Display Testimonials (For showing the Testimonial's carousel in the Homepage, click Yes or No)" options="0:No;1:Yes;" />
                 </fields>
                 <items>
-                    <item link_title="About" path_part="about">
+                    <item link_title="About" path_part="about" parent_item="about">
                         <title><![CDATA[]]></title>
                         <image><![CDATA[]]></image>
                         <content><![CDATA[]]></content>
