@@ -265,11 +265,11 @@
                     <yes_no name="display_patient_forms" name_friendly="Display Patient Forms?" options="0:No;1:Yes;" />
                 </fields>
                 <items>
-                    <item link_title="Resources" path_part="resources">
+                    <item link_title="Resources" path_part="resources" parent_item="resources">
                         <title><![CDATA[]]></title>
                         <image><![CDATA[]]></image>
                         <image_alt><![CDATA[]]></image_alt>
-                        <display_pet_desk_banner><![CDATA[]]></display_pet_desk_banner>
+                        <display_pet_desk_banner><![CDATA[1]]></display_pet_desk_banner>
                         <content><![CDATA[]]></content>
                         <display_patient_forms><![CDATA[]]></display_patient_forms>
                     </item>
