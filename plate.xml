@@ -113,7 +113,7 @@
                   <item link_title="Home" path_part="zesty_home">
                     <below_the_fold_title><![CDATA[homepage]]></below_the_fold_title>
                     <below_the_fold_content><![CDATA[]]></below_the_fold_content>
-                    <display_testimonials><![CDATA[]]></display_testimonials>
+                    <display_testimonials><![CDATA[1]]></display_testimonials>
                     <faqs_title><![CDATA[]]></faqs_title>
                     <faqs_content><![CDATA[]]></faqs_content>
                     <faqs_image><![CDATA[]]></faqs_image>
@@ -121,11 +121,11 @@
                     <cta_title><![CDATA[]]></cta_title>
                     <cta_content><![CDATA[]]></cta_content>
                     <cta_background_image><![CDATA[]]></cta_background_image>
-                    <cta_image_color_overlay><![CDATA[]]></cta_image_color_overlay>
+                    <cta_image_color_overlay><![CDATA[0]]></cta_image_color_overlay>
                     <cta_button_text><![CDATA[]]></cta_button_text>
                     <button_link_internal><![CDATA[]]></button_link_internal>
                     <button_link_external><![CDATA[]]></button_link_external>
-                    <cta_new_tab><![CDATA[]]></cta_new_tab>
+                    <cta_new_tab><![CDATA[0]]></cta_new_tab>
                     <about_section_title><![CDATA[]]></about_section_title>
                     <about_section_content><![CDATA[]]></about_section_content>
                   </item>
@@ -305,7 +305,7 @@
                     <item link_title="Contact" path_part="contact">
                       <title><![CDATA[]]></title>
                       <content><![CDATA[]]></content>
-                      <display_contact_form><![CDATA[]]></display_contact_form>
+                      <display_contact_form><![CDATA[1]]></display_contact_form>
                       <hours><![CDATA[]]></hours>
                       <google_maps_embed><![CDATA[]]></google_maps_embed>
                     </item>
@@ -372,7 +372,7 @@
                         <title><![CDATA[]]></title>
                         <image><![CDATA[]]></image>
                         <content><![CDATA[]]></content>
-                        <display_testimonials><![CDATA[]]></display_testimonials>
+                        <display_testimonials><![CDATA[1]]></display_testimonials>
                     </item>
                 </items>
             </templateset>
@@ -408,7 +408,7 @@
                         <image><![CDATA[]]></image>
                         <content><![CDATA[]]></content>
                         <team_section_title><![CDATA[]]></team_section_title>
-                        <display_testimonials><![CDATA[1]]></display_testimonials>
+                        <display_testimonials><![CDATA[0]]></display_testimonials>
                     </item>
                 </items>
             </templateset>
