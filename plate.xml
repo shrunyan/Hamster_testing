@@ -404,11 +404,11 @@
                 </fields>
                 <items>
                     <item link_title="About" path_part="about" parent_item="about">
-                        <title><![CDATA[]]></title>
+                        <title><![CDATA[about page title]]></title>
                         <image><![CDATA[]]></image>
-                        <content><![CDATA[]]></content>
-                        <team_section_title><![CDATA[]]></team_section_title>
-                        <display_testimonials><![CDATA[]]></display_testimonials>
+                        <content><![CDATA[<p>page content</p>]]></content>
+                        <team_section_title><![CDATA[team section title]]></team_section_title>
+                        <display_testimonials><![CDATA[1]]></display_testimonials>
                     </item>
                 </items>
             </templateset>
