@@ -335,6 +335,7 @@
                     <wysiwyg_advanced name="content" name_friendly="Content" />
                     <one_to_many name="tags" name_friendly="Tags" relationship="tags" relationship_field="title" />
                 </fields>
+                <items>
                   <item link_title="Sample Article" path_part="sample-article" parent="blog">
                     <title><![CDATA[]]></title>
                     <image><![CDATA[]]></image>
@@ -350,6 +351,7 @@
                 <fields>
                     <text name="title" name_friendly="Title" required="1" list="1" />
                 </fields>
+                <items>
                   <item link_title="Sample Tag" path_part="sample-tag" parent="blog">
                     <title><![CDATA[]]></title>
                   </item>
