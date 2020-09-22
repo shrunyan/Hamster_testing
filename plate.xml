@@ -401,6 +401,23 @@
                 </items>
             </templateset>
             <!-- Blog Pagesets (Articles and Tags) -->
+            <!-- 6.2 Blog: Tags -->
+            <pageset name="tags" name_friendly="Tags" view="tags" parent_item="blog">
+                <fields>
+                    <text name="title" name_friendly="Title" required="1" list="1" />
+                </fields>
+                <items>
+                  <item link_title="Tag 1" path_part="tag-1" parent="blog">
+                    <title><![CDATA[Tag1]]></title>
+                  </item>
+                  <item link_title="Tag 2" path_part="tag-2" parent="blog">
+                    <title><![CDATA[Tag2]]></title>
+                  </item>
+                  <item link_title="Tag 3" path_part="tag-3" parent="blog">
+                    <title><![CDATA[Tag3]]></title>
+                  </item>
+                </items>
+            </pageset>
             <!-- 6.1 Blog: Articles -->
             <pageset name="articles" name_friendly="Articles" view="articles" parent_item="blog">
                 <fields>
@@ -409,7 +426,7 @@
                     <text name="image_alt" name_friendly="Image Alt" />
                     <date name="date" name_friendly="Date" />
                     <wysiwyg_advanced name="content" name_friendly="Content" />
-                    <one_to_many name="tags" name_friendly="Tags" relationship="faqs" relationship_field="question" />
+                    <one_to_many name="tags" name_friendly="Tags" relationship="tags" relationship_field="title" />
                 </fields>
                 <items>
                   <item link_title="Article 1" path_part="article-1" parent="blog">
@@ -441,23 +458,7 @@
                   </item>
                 </items>
             </pageset>
-            <!-- 6.2 Blog: Tags -->
-            <pageset name="tags" name_friendly="Tags" view="tags" parent_item="blog">
-                <fields>
-                    <text name="title" name_friendly="Title" required="1" list="1" />
-                </fields>
-                <items>
-                  <item link_title="Tag 1" path_part="tag-1" parent="blog">
-                    <title><![CDATA[Tag1]]></title>
-                  </item>
-                  <item link_title="Tag 2" path_part="tag-2" parent="blog">
-                    <title><![CDATA[Tag2]]></title>
-                  </item>
-                  <item link_title="Tag 3" path_part="tag-3" parent="blog">
-                    <title><![CDATA[Tag3]]></title>
-                  </item>
-                </items>
-            </pageset>
+
             <!-- END BLOG -->
 
             <!-- 7. OUR SERVICES -->
