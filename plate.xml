@@ -396,7 +396,7 @@
                 </fields>
                 <items>
                     <item link_title="Blog" path_part="blog">
-                        <title><![CDATA[Our Services]]></title>
+                        <title><![CDATA[Blog]]></title>
                     </item>
                 </items>
             </templateset>
@@ -412,7 +412,26 @@
                     <one_to_many name="tags" name_friendly="Tags" relationship="tags" relationship_field="title" />
                 </fields>
                 <items>
-                  <item link_title="Sample Article" path_part="sample-article" parent="blog">
+                  <item link_title="Article 1" path_part="article-1" parent="blog">
+                    <title><![CDATA[Article 1]]></title>
+                    <image><![CDATA[https://nq4q3441.media.zestyio.com/pexels-nancy-guth-850602.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                    <image_alt><![CDATA[dogs]]></image_alt>
+                    <date><![CDATA[2020-07-16]]></date>
+                    <content><![CDATA[<p>Quisque sit amet auctor lectus, eu vestibulum odio. Cras id purus neque. Vivamus ut tempus elit. Sed finibus, urna eget elementum euismod, urna velit pretium neque, cursus posuere nisl orci sit amet nisi. Nunc non massa sit amet turpis placerat dignissim. Sed vulputate condimentum augue, quis viverra urna elementum nec. Proin tellus felis, varius nec rhoncus non, molestie at ante.</p>
+                    <p>Quisque luctus dictum ultrices. Vestibulum libero lacus, sodales quis porta vitae, sodales in erat. Mauris lectus nibh, rutrum non magna a, convallis sagittis libero. Sed sed nisl in lacus cursus scelerisque. In mauris orci, fermentum ut ipsum in, rhoncus consectetur lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Ut blandit molestie sem, vitae iaculis purus. Praesent lobortis in ante nec tristique. In ut ultricies nunc, quis vestibulum augue. Pellentesque porttitor sem sit amet nunc blandit malesuada. Quisque fringilla maximus congue. Suspendisse feugiat libero et convallis tempor. Cras nec nibh fringilla, lacinia nunc vel, pretium ipsum. Donec bibendum orci sapien, in aliquam ligula feugiat vitae.</p>
+                    <p>In urna ligula, fringilla eget nisi id, imperdiet sagittis dolor. Fusce mattis laoreet risus, vel sollicitudin lectus maximus vel. Quisque sollicitudin faucibus scelerisque. Aenean egestas condimentum mauris, in aliquam lacus ultricies malesuada. Vivamus in arcu nulla. Fusce quis est vestibulum, rhoncus elit eget, suscipit ante. Maecenas ipsum sapien, luctus at erat et, pulvinar tempus risus. Praesent tempus, est ut consectetur condimentum, erat urna fringilla tellus, non dictum risus massa at erat. Integer erat mauris, egestas eu porta ultrices, iaculis accumsan augue. Cras molestie quam id quam varius tempus. Nullam aliquam vulputate diam a laoreet.</p>]]></content>
+                    <tags><![CDATA[7-da90fff6d2-njvzp3,7-f88886a49a-q5jwz7]]></tags>
+                  </item>
+                  <item link_title="Article 2" path_part="article-2" parent="blog">
+                    <title><![CDATA[]]></title>
+                    <image><![CDATA[]]></image>
+                    <image_alt><![CDATA[]]></image_alt>
+                    <date><![CDATA[]]></date>
+                    <content><![CDATA[]]></content>
+                    <tags><![CDATA[]]></tags>
+                  </item>
+                  <item link_title="Article 3" path_part="article-3" parent="blog">
                     <title><![CDATA[]]></title>
                     <image><![CDATA[]]></image>
                     <image_alt><![CDATA[]]></image_alt>
