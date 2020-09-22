@@ -447,8 +447,14 @@
                     <text name="title" name_friendly="Title" required="1" list="1" />
                 </fields>
                 <items>
-                  <item link_title="Sample Tag" path_part="sample-tag" parent="blog">
-                    <title><![CDATA[]]></title>
+                  <item link_title="Tag 1" path_part="tag-1" parent="blog">
+                    <title><![CDATA[Tag1]]></title>
+                  </item>
+                  <item link_title="Tag 2" path_part="tag-2" parent="blog">
+                    <title><![CDATA[Tag2]]></title>
+                  </item>
+                  <item link_title="Tag 3" path_part="tag-3" parent="blog">
+                    <title><![CDATA[Tag3]]></title>
                   </item>
                 </items>
             </pageset>
