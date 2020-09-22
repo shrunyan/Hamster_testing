@@ -409,7 +409,7 @@
                     <text name="image_alt" name_friendly="Image Alt" />
                     <date name="date" name_friendly="Date" />
                     <wysiwyg_advanced name="content" name_friendly="Content" />
-                    <one_to_many name="tags" name_friendly="Tags" relationship="tags" relationship_field="title" />
+                    <one_to_many name="tags" name_friendly="Tags" relationship="faqs" relationship_field="question" />
                 </fields>
                 <items>
                   <item link_title="Article 1" path_part="article-1" parent="blog">
