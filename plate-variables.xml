@@ -1,10 +1,10 @@
-
 <?xml version="1.0"?>
 <plate_variables>
-    <created_date>2020-09-17</created_date>
-    <plate>Vetranarian Template Hamster</plate>
-    <created_by>Zesty.io</created_by>
-    <kitchen>Blank</kitchen>
+    <created_date>2020-09-14</created_date>
+	<created_date>2020-09-14</created_date>
+	<plate>Hamster</plate>
+	<created_by>Zesty</created_by>
+	<kitchen>Empty</kitchen>
     <variables>
         <!-- Body Colors & Spacing Category:1 -->
         <color name="primary_brand" name_friendly="Primary Color">
