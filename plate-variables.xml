@@ -79,15 +79,16 @@
             <locked>0</locked>
             <value>#dfeaed</value>
         </color>
+	  <!-- HTML Elements Category:7 -->
         <text name="default_border_radius" name_friendly="Default Border Radius">
-            <category>1</category>
+            <category>7</category>
             <description>The default curvature for borders around elements. Use px unit.</description>
-            <sort>7</sort>
+            <sort>1</sort>
             <edit_in_content>1</edit_in_content>
             <locked>0</locked>
             <value>10px</value>
         </text>
-        <!-- Typography Category:2 -->
+        
         <font_picker name="font-family-base" name_friendly="Main Body Font">
             <category>2</category>
             <description/>
@@ -505,7 +506,7 @@
             <sort>3</sort>
             <edit_in_content>1</edit_in_content>
             <locked>0</locked>
-            <value>dark</value>
+            <value>8_dark</value>
             <options>
                 <option description="Primary" value="1_primary" />
                 <option description="Secondary" value="2_secondary" />
