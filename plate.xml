@@ -1,35 +1,592 @@
-<?xml version="1.0" encoding="UTF-8" standalone='yes'?>
-<plate>
-    <ingredients>
-        <templateset name="homepage" name_friendly="Homepage" view="homepage">
+<?xml version="1.0"?>
+    <plate>
+
+       <!-- CLIPPINGS -->
+        <clippings>
+            <text name="site_name" name_friendly="Site Name" required="1"><![CDATA[]]></text>
+            <images name="logo" name_friendly="Site Logo" limit="1" />
+            <text name="petdesk_id" name_friendly="PetDesk ID"><![CDATA[]]></text>
+            <text name="footer_text" name_friendly="Footer Text"><![CDATA[]]></text>
+            <text name="contact_email" name_friendly="Contact Email"><![CDATA[]]></text>
+            <text name="contact_phone" name_friendly="Contact Phone"><![CDATA[]]></text>
+            <textarea name="hours" name_friendly="Hours" list="1" />
+            <textarea name="address" name_friendly="Address" list="1" />
+            <link name="appointments_link" name_friendly="Appointments Link" />
+            <link name="facebook" name_friendly="Facebook (If no Facebook, just add a space.)" />
+            <link name="facebook" name_friendly="Facebook (If no Facebook, just add a space.)" />
+            <link name="twitter" name_friendly="Twitter (If no Twitter, just add a space.)" />
+            <link name="instagram" name_friendly="Instagram (If no Instagram, just add a space.)" />
+            <images name="petdesk_banner" name_friendly="PetDesk Banner" limit="1" />
+            <text name="image_alt" name_friendly="Image Alt"><![CDATA[]]></text>
+        </clippings>
+        <ingredients>
+
+          <!-- HEADLESS-1 FAQ  -->
+          <dataset name="faqs" name_friendly="FAQs">
             <fields>
-                <text name="title" name_friendly="Lead in Title" required="1" />
-                <wysiwyg_advanced name="content" name_friendly="Intro Text" />
-                <images name="image" name_friendly="Main Image" limit="1" />
+                <text name="question" name_friendly="Question" list="1" />
+                <wysiwyg_advanced name="answer" name_friendly="Answer" list="1" />
+                <sort name="sort_order" name_friendly="Sort Order" list="1" />
             </fields>
             <items>
-                <item link_title="Homepage" path_part="zesty_home">
-                    <title><![CDATA[Homepage]]></title>
-                    <content><![CDATA[<p>Blank</p>]]></content>
-                    <image><![CDATA[https://be93523bd41e2e475e74-e4edef19ad51123442eaceed55c78461.ssl.cf2.rackcdn.com/or-homepage1.png]]></image>
-                </item>
+              <item link_title="" path_part="">
+                  <question><![CDATA[]]></question>
+                  <answer><![CDATA[]]></answer>
+                  <sort_order><![CDATA[]]></sort_order>
+              </item>
             </items>
-        </templateset>
-    </ingredients>
+          </dataset>
 
-    <clippings>
-        <text name="site_name" name_friendly="Site Name" required="1">
-            <![CDATA[Edit Site Name in Content Clippings]]>
-        </text>
-        <images name="logo" name_friendly="Site Logo" limit="1" />
-        <text name="footer_text" name_friendly="Footer Text">
-            <![CDATA[Footer text can be updated in Content Clippings]]>
-        </text>
-    </clippings>
+          <!-- HEADLESS-2 TESTIMONIALS  -->
+          <dataset name="testimonials" name_friendly="Testimonials">
+            <fields>
+              <text name="title" name_friendly="Title" list="1"/>
+              <wysiwyg_advanced name="content" name_friendly="Content" list="1" />
+              <sort name="sort_order" name_friendly="Sort Order" list="1" />
+            </fields>
+            <items>
+              <item link_title="" path_part="">
+                  <title><![CDATA[]]></title>
+                  <content><![CDATA[]]></content>
+                  <sort_order><![CDATA[]]></sort_order>
+              </item>
+            </items>
+          </dataset>
 
-    <head>
-        <doctype>html5</doctype>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    </head>
-</plate>
+          <!-- HEADLESS-3 NAVIGATION  -->
+          <dataset name="navigation" name_friendly="Navigation">
+            <fields>
+              <text name="title" name_friendly="Title" list="1" />
+              <internal_link name="internal_link" name_friendly="Internal Link" />
+              <link name="external_url" name_friendly="External URL" />
+              <text name="link" name_friendly="Link" list="1" />
+              <internal_link name="parent_nav_item" name_friendly="Parent Nav Item (this field is used to create dropdowns for nav items. If an item is top-level then you must choose None. All items must have a selection.)" list="1" />
+              <sort name="sort_order" name_friendly="Sort Order" list="1" />
+            </fields>
+            <items link_title="" path_part="">
+              <title><![CDATA[]]></title>
+              <internal_link><![CDATA[]]></internal_link>
+              <external_url><![CDATA[]]></external_url>
+              <link><![CDATA[]]></link>
+              <parent_nav_item><![CDATA[]]></parent_nav_item>
+              <sort_order><![CDATA[]]></sort_order>
+            </items>
+          </dataset>
+
+
+          <!-- 1. HOMEPAGE -->
+          <templateset name="homepage" name_friendly="Homepage" view="homepage">
+              <fields>
+                <text name="below_the_fold_title" name_friendly="Below the Fold Title (This title is displayed below the hero image and cards.)" />
+                <wysiwyg_advanced name="below_the_fold_content" name_friendly="Below the Fold Content (This content is displayed in the 'Below the Fold' Section and can be edited to display multiple columns by using the table function in the content editor.)" />
+                <yes_no name="display_testimonials" name_friendly="Display Testimonials (For showing the Testimonial's carousel in the Homepage, click Yes or No)" options="0:No;1:Yes;" />
+                <text name="faqs_title" name_friendly="FAQs Title (This content displayed in the FAQs section of the Homepage)" />
+                <wysiwyg_advanced name="faqs_content" name_friendly="FAQs Content (This content is displayed in the FAQs section below its title.)" />
+                <images name="faqs_image" name_friendly="FAQs Image (This image is displayed on the left section of the FAQs content in the Homepage.)" limit="1" />
+                <text name="faqs_video" name_friendly="FAQs Video (Use this field to paste a link of a hosted video. For example, this can be a YouTube link or if the video is uploaded directly to Zesty then it can be it's media URL. If no video will be used then leave this field blank.)" />
+                <text name="cta_title" name_friendly="CTA Title (The Call to Action section is displayed directly below the FAQs section.)" />
+                <wysiwyg_advanced name="cta_content" name_friendly="CTA Content" />
+                <images name="cta_background_image" name_friendly="CTA Background Image (This image remains fixed while the user scrolls and is responsive based on screen size.)" limit="1" />
+                <yes_no name="cta_image_color_overlay" name_friendly="CTA Image Color Overlay (This function will add a color overlay to the CTA Image using the instance's selected Primary Color at 20% opacity.)" options="0:No;1:Yes;"  />
+                <text name="cta_button_text" name_friendly="CTA Button Text (This button is displayed to the right of the CTA section)" />
+                <internal_link name="button_link_internal" name_friendly="CTA Button link: Internal" />
+                <link name="button_link_external" name_friendly="CTA Button Link: External (will override internal link)" />
+                <yes_no name="cta_new_tab" name_friendly="Open CTA button link in new tab? (select whether or not you'd like the CTA Button link to open in a new tab.)" options="0:No;1:Yes;" />
+                <text name="about_section_title" name_friendly="About Section Title" />
+                <wysiwyg_advanced name="about_section_content" name_friendly="About Section Content" />
+              </fields>
+              <items>
+                  <item link_title="Home" path_part="zesty_home">
+                    <below_the_fold_title><![CDATA[Lorem ipsum dolor sit amet]]></below_the_fold_title>
+                    <below_the_fold_content><![CDATA[<p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam gravida imperdiet nulla nec iaculis. Curabitur dui mi, dapibus eu ullamcorper ut, feugiat ut erat. Sed ex nunc, maximus a metus nec, malesuada efficitur tellus.&nbsp;</p>
+                    <table border="1" style="border-collapse: collapse; width: 100%;">
+                    <tbody>
+                    <tr>
+                    <td style="width: 50%;">
+                    <p style="text-align: left;">Quisque sed vestibulum velit. Nam viverra sollicitudin maximus. Pellentesque congue nibh ac efficitur hendrerit. Nullam condimentum tristique sem, commodo sodales massa sollicitudin at. Donec viverra, dolor id maximus imperdiet, sem sem tempor mauris, sed hendrerit ante justo sit amet eros. Pellentesque tempus neque mi, sit amet tincidunt diam vulputate at. Mauris vehicula lectus interdum varius congue.</p>
+                    </td>
+                    <td style="width: 50%;">
+                    <p style="text-align: left;">Morbi sed nunc in dolor tincidunt laoreet. Nunc sed libero in urna accumsan elementum sed sit amet ipsum. Nam eleifend pellentesque leo, vel sollicitudin sem ornare rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam gravida imperdiet nulla nec iaculis. Curabitur dui mi, dapibus eu ullamcorper ut, feugiat ut erat. Sed ex nunc, maximus a metus nec, malesuada efficitur tellus.&nbsp;</p>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>]]></below_the_fold_content>
+                    <display_testimonials><![CDATA[1]]></display_testimonials>
+                    <faqs_title><![CDATA[Maecenas hendrerit justo]]></faqs_title>
+                    <faqs_content><![CDATA[<p>Quisque convallis mollis nisl, ut sagittis mauris posuere vel. Ut eu faucibus lectus. Cras sodales, lorem a rutrum aliquam, orci ligula tempus nibh, eget dictum enim lectus et leo. Quisque euismod commodo vestibulum. Sed sit amet dictum velit, in iaculis risus. Pellentesque egestas et quam eu dictum. Pellentesque vitae accumsan augue. Morbi nibh libero, tempor non tincidunt ac, efficitur et urna. Nullam laoreet placerat velit vitae convallis. Nulla facilisi. Vivamus tristique vitae purus vel fringilla. Morbi ut felis auctor, aliquet libero lacinia, vehicula enim.</p>]]></faqs_content>
+                    <faqs_image><![CDATA[https://nq4q3441.media.zestyio.com/pexels-gustavo-fring-4148879.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></faqs_image>
+                    <faqs_video><![CDATA[https://youtu.be/tkzwXX53qQ8]]></faqs_video>
+                    <cta_title><![CDATA[Nunc feugiat dolor id congue laoreet.]]></cta_title>
+                    <cta_content><![CDATA[<p>Proin nec dui eu libero gravida mollis. Nullam nec consectetur lorem, ut rhoncus velit. Ut rhoncus dui eu diam commodo, eu tempor ante porta. Duis nec pharetra erat, vitae maximus est. Integer dapibus, velit iaculis accumsan pharetra, est mi dignissim purus, vitae pharetra nibh felis non lorem.</p>]]></cta_content>
+                    <cta_background_image><![CDATA[https://nq4q3441.media.zestyio.com/adam-griffith-sWkkIiTJMYc-unsplash.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></cta_background_image>
+                    <cta_image_color_overlay><![CDATA[0]]></cta_image_color_overlay>
+                    <cta_button_text><![CDATA[Learn More]]></cta_button_text>
+                    <button_link_internal><![CDATA[zesty_home]]></button_link_internal>
+                    <button_link_external><![CDATA[]]></button_link_external>
+                    <cta_new_tab><![CDATA[0]]></cta_new_tab>
+                    <about_section_title><![CDATA[Meet the team!]]></about_section_title>
+                    <about_section_content><![CDATA[<p>Quisque luctus dictum ultrices. Vestibulum libero lacus, sodales quis porta vitae, sodales in erat. Mauris lectus nibh, rutrum non magna a, convallis sagittis libero. Sed sed nisl in lacus cursus scelerisque. In mauris orci, fermentum ut ipsum in, rhoncus consectetur lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>]]></about_section_content>
+                  </item>
+              </items>
+          </templateset>
+          <!-- END HOMEPAGE -->
+
+          <!-- 1.1 Homepage slider dataset -->
+          <dataset name="hero_sliders" name_friendly="Hero Sliders" parent_item="zesty_home">
+                <fields>
+                  <images name="image" name_friendly="Image" limit="1" list="1" />
+                  <text name="alt_text" name_friendly="Alt Text" list="1" />
+                  <text name="header_text" name_friendly="Header Text (This displays as the the title text overlaid on the image above the body text.)" list="1" />
+                  <wysiwyg_advanced name="body_text" name_friendly="Body Text (This content displays as the main content overlaid on the image. )" />
+                  <text name="button_text" name_friendly="Button Text (Leave blank fro no slider button)" list="1" />
+                  <internal_link name="button_link_internal" name_friendly="Button link: Internal" list="1" />
+                  <link name="button_link_external" name_friendly="Button link: External (will override internal link field)" />
+                  <yes_no name="button_new_tab" name_friendly="Open in new tab? (select whether or not you'd like the slider link to open in a new tab.)" options="0:No;1:Yes;" list="1"/>
+                  <sort name="sort_order" name_friendly="Sort Order" list="1" />
+                </fields>
+                <items>
+                    <item link_title="" path_part="">
+                        <image><![CDATA[https://nq4q3441.media.zestyio.com/bonnie-kittle-MUcxe_wDurE-unsplash-2.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                        <alt_text><![CDATA[lorem ipsum]]></alt_text>
+                        <header_text><![CDATA[Welcome to Hamster]]></header_text>
+                        <body_text><![CDATA[<div>
+                        <div>
+                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                        </div>
+                        </div>]]></body_text>
+                        <button_text><![CDATA[Learn More]]></button_text>
+                        <button_link_internal><![CDATA[]]></button_link_internal>
+                        <button_link_external><![CDATA[]]></button_link_external>
+                        <button_new_tab><![CDATA[0]]></button_new_tab>
+                        <sort_order><![CDATA[1]]></sort_order>
+                    </item>
+                    <item link_title="" path_part="">
+                        <image><![CDATA[https://nq4q3441.media.zestyio.com/avi-richards-aYHgchNOsGY-unsplash.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                        <alt_text><![CDATA[lorem ipsum]]></alt_text>
+                        <header_text><![CDATA[Lorem Ipsum Dolor]]></header_text>
+                        <body_text><![CDATA[<div>
+                        <div>
+                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                        </div>
+                        </div>]]></body_text>
+                        <button_text><![CDATA[Read More]]></button_text>
+                        <button_link_internal><![CDATA[]]></button_link_internal>
+                        <button_link_external><![CDATA[]]></button_link_external>
+                        <button_new_tab><![CDATA[0]]></button_new_tab>
+                        <sort_order><![CDATA[2]]></sort_order>
+                    </item>
+                    <item link_title="" path_part="">
+                        <image><![CDATA[https://nq4q3441.media.zestyio.com/chunlea-ju-HN3-ehlNwsc-unsplash.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                        <alt_text><![CDATA[lorem ipsum]]></alt_text>
+                        <header_text><![CDATA[Sequi ea ut et est quaerat]]></header_text>
+                        <body_text><![CDATA[<p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>]]></body_text>
+                        <button_text><![CDATA[Take a look]]></button_text>
+                        <button_link_internal><![CDATA[]]></button_link_internal>
+                        <button_link_external><![CDATA[]]></button_link_external>
+                        <button_new_tab><![CDATA[0]]></button_new_tab>
+                        <sort_order><![CDATA[3]]></sort_order>
+                    </item>
+                </items>
+            </dataset>
+            <!-- 1.1 Homepage slider dataset END -->
+
+            <!-- 1.2 Hero Cards dataset -->
+            <dataset name="hero_cards" name_friendly="Hero Cards" parent_item="zesty_home">
+              <fields>
+                <text name="title" name_friendly="Title" list="1" />
+                <text name="boxicon" name_friendly="Boxicon (Uses Boxicons - check their site for the icon you'd like to use. Select Font tab and copy the class name after 'bx' eg bx-book-alt and paste it in this text field.)" list="1" />
+                <textarea name="content" name_friendly="Content" list="1" />
+                <text name="button_text" name_friendly="Button Text" list="1" />
+                <internal_link name="button_link_internal" name_friendly="Button link: Internal" list="1" />
+                <link name="button_link_external" name_friendly="Button link: External (will override internal link field)" list="1" />
+                <yes_no name="button_new_tab" name_friendly="Open in new tab? (select whether or not you'd like the link to open in a new tab.)" options="0:No;1:Yes;" list="1" />
+                <sort name="sort_order" name_friendly="Sort Order" list="1" />
+              </fields>
+              <items>
+                  <item link_title="" path_part="">
+                    <title><![CDATA[Online Booking]]></title>
+                    <boxicon><![CDATA[bx-calendar]]></boxicon>
+                    <content><![CDATA[Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident]]></content>
+                    <button_text><![CDATA[Button]]></button_text>
+                    <button_link_internal><![CDATA[]]></button_link_internal>
+                    <button_link_external><![CDATA[]]></button_link_external>
+                    <button_new_tab><![CDATA[0]]></button_new_tab>
+                    <sort_order><![CDATA[1]]></sort_order>
+                  </item>
+                  <item link_title="" path_part="">
+                    <title><![CDATA[Emergencies]]></title>
+                    <boxicon><![CDATA[bx-plus-medical]]></boxicon>
+                    <content><![CDATA[Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur]]></content>
+                    <button_text><![CDATA[Button]]></button_text>
+                    <button_link_internal><![CDATA[]]></button_link_internal>
+                    <button_link_external><![CDATA[]]></button_link_external>
+                    <button_new_tab><![CDATA[0]]></button_new_tab>
+                    <sort_order><![CDATA[2]]></sort_order>
+                  </item>
+                  <item link_title="" path_part="">
+                    <title><![CDATA[Our Hours]]></title>
+                    <boxicon><![CDATA[bx-time]]></boxicon>
+                    <content><![CDATA[Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum]]></content>
+                    <button_text><![CDATA[Button]]></button_text>
+                    <button_link_internal><![CDATA[]]></button_link_internal>
+                    <button_link_external><![CDATA[]]></button_link_external>
+                    <button_new_tab><![CDATA[0]]></button_new_tab>
+                    <sort_order><![CDATA[3]]></sort_order>
+                  </item>
+                  <item link_title="" path_part="">
+                    <title><![CDATA[Find Us]]></title>
+                    <boxicon><![CDATA[bx-map]]></boxicon>
+                    <content><![CDATA[At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque]]></content>
+                    <button_text><![CDATA[button]]></button_text>
+                    <button_link_internal><![CDATA[]]></button_link_internal>
+                    <button_link_external><![CDATA[]]></button_link_external>
+                    <button_new_tab><![CDATA[0]]></button_new_tab>
+                    <sort_order><![CDATA[4]]></sort_order>
+                  </item>
+              </items>
+            </dataset>
+            <!-- 1.2 Hero Cards dataset END -->
+            <!-- HOMEPAGE END -->
+
+
+            <!-- 2. Gallery -->
+              <templateset name="gallery" name_friendly="Gallery" view="gallery">
+                  <fields>
+                      <text name="title" name_friendly="Title" />
+                      <wysiwyg_advanced name="content" name_friendly="Content" />
+                  </fields>
+                  <items>
+                      <item link_title="Gallery" path_part="gallery" parent_item="gallery">
+                          <title><![CDATA[]]></title>
+                          <content><![CDATA[]]></content>
+                      </item>
+                    </items>
+                  </templateset>
+
+              <!-- 2.1 Gallery Dataset: Collections -->
+              <dataset name="gallery_collections" name_friendly="Gallery Collections" parent_item="gallery">
+                  <fields>
+                      <text name="title" name_friendly="Title" list="1" />
+                      <sort name="sort_order" name_friendly="Sort Order" list="1" />
+                  </fields>
+                  <items>
+                    <title><![CDATA[]]></title>
+                    <sort_order><![CDATA[]]></sort_order>
+                  </items>
+              </dataset>
+              <!-- 2.2 Gallery Dataset: Media -->
+              <dataset name="gallery_media" name_friendly="Gallery Media" parent_item="gallery">
+                  <fields>
+                      <images name="image" name_friendly="Image" limit="1" />
+                      <text name="alt_text" name_friendly="Alt Text" />
+                      <link name="external_url_video" name_friendly="External URL (video: Use this field to paste the URL of a hosted video. This can be an internally hosted video on Zesty or an externally hosted video: i.e, YouTube. If the media item will only be an image then leave this field blank.)" list="1" />
+                      <one_to_many name="gallery_collection" name_friendly="Gallery Collection" relationship="gallery_collections" relationship_field="title" list="1" />
+                      <sort name="sort_order" name_friendly="Sort Order" list="1" />
+                  </fields>
+                  <items>
+                    <image><![CDATA[]]></image>
+                    <alt_text><![CDATA[]]></alt_text>
+                    <external_url_video><![CDATA[]]></external_url_video>
+                    <gallery_collection><![CDATA[]]></gallery_collection>
+                    <sort_order><![CDATA[]]></sort_order>
+                  </items>
+              </dataset>
+              <!-- GALLERY END -->
+
+            <!-- 3. GENERIC PAGE: PRIVACY POLICY, ToS, THANK YOU ** -->
+            <templateset name="generic_page" name_friendly="Generic Page" view="generic_page">
+              <fields>
+                <text name="title" name_friendly="Title" />
+                <images name="image" name_friendly="Image" limit="1" />
+                <text name="image_alt" name_friendly="Image Alt" />
+                <wysiwyg_advanced name="content" name_friendly="Content" />
+                <yes_no name="display_section_links_sidebar" name_friendly="Display Section Links Sidebar? (The Section Links sidebar will display all pages that have the same parent page. )" options="0:No;1:Yes;" />
+              </fields>
+              <items>
+                <title><![CDATA[]]></title>
+                <image><![CDATA[]]></image>
+                <image_alt><![CDATA[]]></image_alt>
+                <content><![CDATA[]]></content>
+                <display_section_links_sidebar><![CDATA[]]></display_section_links_sidebar>
+            </items>
+          </templateset>
+          <!-- GENERIC PAGE END  -->
+
+          <!-- 4. RESOURCES -->
+            <templateset name="resources" name_friendly="Resources" view="resources">
+                <fields>
+                    <text name="title" name_friendly="Title" />
+                    <images name="image" name_friendly="Image" limit="1" />
+                    <text name="image_alt" name_friendly="Image Alt" />
+                    <yes_no name="display_pet_desk_banner" name_friendly="Display Pet Desk Banner?" options="0:No;1:Yes;" />
+                    <wysiwyg_advanced name="content" name_friendly="Content" />
+                    <yes_no name="display_patient_forms" name_friendly="Display Patient Forms?" options="0:No;1:Yes;" />
+                </fields>
+                <items>
+                    <item link_title="Resources" path_part="resources" parent_item="resources">
+                        <title><![CDATA[]]></title>
+                        <image><![CDATA[]]></image>
+                        <image_alt><![CDATA[]]></image_alt>
+                        <display_pet_desk_banner><![CDATA[0]]></display_pet_desk_banner>
+                        <content><![CDATA[]]></content>
+                        <display_patient_forms><![CDATA[0]]></display_patient_forms>
+                    </item>
+                  </items>
+                </templateset>
+                <!--  4.1 Resources Dataset: Online Forms  -->
+            <dataset name="online_forms" name_friendly="Online Forms" parent_item="resources">
+                <fields>
+                  <text name="title" name_friendly="Title" list="1" />
+                  <wysiwyg_advanced name="description" name_friendly="Description" list="1" />
+                  <images name="pdf" name_friendly="PDF" limit="1" list="1" />
+                  <sort name="sort_order" name_friendly="Sort Order" list="1" />
+                </fields>
+                <items>
+                  <title><![CDATA[]]></title>
+                  <description><![CDATA[]]></description>
+                  <pdf><![CDATA[]]></pdf>
+                  <sort_order><![CDATA[]]></sort_order>
+                </items>
+            </dataset>
+            <!-- RESOURCES END -->
+
+            <!-- 5. CONTACT US -->
+            <templateset name="contact" name_friendly="Contact" view="contact">
+                <fields>
+                    <text name="title" name_friendly="Title" />
+                    <wysiwyg_advanced name="content" name_friendly="Content" />
+                    <yes_no name="display_contact_form" name_friendly="Display Contact Form?" options="0:Text;1:Textarea;" />
+                    <textarea name="hours" name_friendly="Hours" />
+                    <textarea name="google_maps_embed" name_friendly="Google Maps Embed" />
+                </fields>
+                <items>
+                    <item link_title="Contact" path_part="contact">
+                      <title><![CDATA[]]></title>
+                      <content><![CDATA[]]></content>
+                      <display_contact_form><![CDATA[1]]></display_contact_form>
+                      <hours><![CDATA[]]></hours>
+                      <google_maps_embed><![CDATA[]]></google_maps_embed>
+                    </item>
+                </items>
+            </templateset>
+            <!-- CONTACT US END -->
+
+            <!-- 6. Blog -->
+            <templateset name="blog" name_friendly="Blog" view="blog">
+                <fields>
+                    <text name="title" name_friendly="Title" required="1" />
+                </fields>
+                <items>
+                    <item link_title="Blog" path_part="blog">
+                        <title><![CDATA[Blog]]></title>
+                    </item>
+                </items>
+            </templateset>
+            <!-- Blog Pagesets (Articles and Tags) -->
+            <!-- 6.2 Blog: Tags -->
+            <pageset name="tags" name_friendly="Tags" view="tags" parent_item="blog">
+                <fields>
+                    <text name="title" name_friendly="Title" required="1" list="1" />
+                </fields>
+                <items>
+                  <item link_title="Tag 1" path_part="tag-1" parent="blog">
+                    <title><![CDATA[Tag1]]></title>
+                  </item>
+                  <item link_title="Tag 2" path_part="tag-2" parent="blog">
+                    <title><![CDATA[Tag2]]></title>
+                  </item>
+                  <item link_title="Tag 3" path_part="tag-3" parent="blog">
+                    <title><![CDATA[Tag3]]></title>
+                  </item>
+                </items>
+            </pageset>
+            <!-- 6.1 Blog: Articles -->
+            <pageset name="articles" name_friendly="Articles" view="articles" parent_item="blog">
+                <fields>
+                    <text name="title" name_friendly="Title" required="1" list="1" />
+                    <images name="image" name_friendly="Image" list="1" />
+                    <text name="image_alt" name_friendly="Image Alt" />
+                    <date name="date" name_friendly="Date" />
+                    <datetime name="sample_datetime_field" name_friendly="Sample Datetime Field" />
+                    <wysiwyg_advanced name="content" name_friendly="Content" />
+                    <one_to_many name="tags" name_friendly="Tags" relationship="tags" relationship_field="title" />
+                </fields>
+                <items>
+                  <item link_title="Article 1" path_part="article-1" parent="blog">
+                    <title><![CDATA[Article 1]]></title>
+                    <image><![CDATA[https://nq4q3441.media.zestyio.com/pexels-nancy-guth-850602.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                    <image_alt><![CDATA[dogs]]></image_alt>
+                    <date><![CDATA[2020-07-16]]></date>
+                    <sample_datetime_field><![CDATA[]]></sample_datetime_field>
+                    <content><![CDATA[<p>Quisque sit amet auctor lectus, eu vestibulum odio. Cras id purus neque. Vivamus ut tempus elit. Sed finibus, urna eget elementum euismod, urna velit pretium neque, cursus posuere nisl orci sit amet nisi. Nunc non massa sit amet turpis placerat dignissim. Sed vulputate condimentum augue, quis viverra urna elementum nec. Proin tellus felis, varius nec rhoncus non, molestie at ante.</p>
+                    <p>Quisque luctus dictum ultrices. Vestibulum libero lacus, sodales quis porta vitae, sodales in erat. Mauris lectus nibh, rutrum non magna a, convallis sagittis libero. Sed sed nisl in lacus cursus scelerisque. In mauris orci, fermentum ut ipsum in, rhoncus consectetur lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Ut blandit molestie sem, vitae iaculis purus. Praesent lobortis in ante nec tristique. In ut ultricies nunc, quis vestibulum augue. Pellentesque porttitor sem sit amet nunc blandit malesuada. Quisque fringilla maximus congue. Suspendisse feugiat libero et convallis tempor. Cras nec nibh fringilla, lacinia nunc vel, pretium ipsum. Donec bibendum orci sapien, in aliquam ligula feugiat vitae.</p>
+                    <p>In urna ligula, fringilla eget nisi id, imperdiet sagittis dolor. Fusce mattis laoreet risus, vel sollicitudin lectus maximus vel. Quisque sollicitudin faucibus scelerisque. Aenean egestas condimentum mauris, in aliquam lacus ultricies malesuada. Vivamus in arcu nulla. Fusce quis est vestibulum, rhoncus elit eget, suscipit ante. Maecenas ipsum sapien, luctus at erat et, pulvinar tempus risus. Praesent tempus, est ut consectetur condimentum, erat urna fringilla tellus, non dictum risus massa at erat. Integer erat mauris, egestas eu porta ultrices, iaculis accumsan augue. Cras molestie quam id quam varius tempus. Nullam aliquam vulputate diam a laoreet.</p>]]></content>
+                    <tags><![CDATA[tag1]]></tags>
+                  </item>
+                  <item link_title="Article 2" path_part="article-2" parent="blog">
+                    <title><![CDATA[Article 2]]></title>
+                    <image><![CDATA[https://nq4q3441.media.zestyio.com/pexels-pixabay-45170.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                    <image_alt><![CDATA[cats]]></image_alt>
+                    <date><![CDATA[2020-08-01]]></date>
+                    <sample_datetime_field><![CDATA[]]></sample_datetime_field>
+                    <content><![CDATA[<p>Phasellus porta velit lacus, eget blandit mi feugiat ac. Mauris sollicitudin eros id tristique pretium. Integer id ligula vel eros tempor dapibus ut eget dui. In eget aliquam arcu. Sed ultrices, ex nec iaculis fringilla, nisi ligula suscipit diam, eu pharetra massa metus vitae enim. Sed blandit tincidunt erat sit amet efficitur. Nulla lacinia enim nec urna laoreet, at ultrices erat mollis. Aliquam erat volutpat. Nam quis porta lorem. Suspendisse potenti. Donec dapibus dignissim ex a efficitur.</p>
+                    <p>Ut eget nunc in erat blandit iaculis. Ut maximus, nisi sed lobortis pharetra, dui enim dapibus felis, sed interdum velit arcu malesuada dui. Mauris molestie tortor nibh, ut bibendum ante dictum vel. Donec vel est ut mauris condimentum facilisis non sed neque. Fusce ac congue turpis. Duis tellus nulla, suscipit sit amet arcu ac, malesuada auctor ex. Fusce ut purus sit amet metus vestibulum hendrerit. Vestibulum auctor consequat dapibus. Pellentesque placerat lectus dictum augue sodales ultricies. Phasellus lacinia non libero blandit ultricies. Ut rhoncus erat eget mollis commodo.</p>
+                    <p>Duis vitae rhoncus diam, ut dapibus risus. Nulla non dolor vulputate, aliquet nisi dignissim, pharetra nulla. Morbi mi felis, iaculis non venenatis ac, venenatis nec ante. Ut justo augue, sollicitudin vitae luctus vitae, ornare quis elit. Nullam vulputate mattis ultrices. Nullam eu condimentum dolor. Pellentesque sit amet molestie elit. Nullam vitae risus velit.</p>
+                    <p>Donec vel aliquam turpis. Nam auctor tristique tempus. Pellentesque auctor quam quis odio interdum interdum. Sed vulputate hendrerit dui, vitae faucibus purus mattis eget. Nullam id varius massa. Proin malesuada semper pretium. Quisque mi lectus, volutpat at libero sed, sagittis dignissim augue. Aenean a tincidunt erat. Mauris maximus bibendum rhoncus. Donec sit amet venenatis massa. Donec diam mi, fringilla id dui in, laoreet consectetur justo. Nam elit ante, convallis quis enim sed, tincidunt blandit ipsum.</p>
+                    <p>Nunc ut dolor scelerisque, placerat ex non, interdum mi. Quisque at eleifend lorem, et elementum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum mattis ultrices. Etiam posuere nibh magna, vitae efficitur nisi dictum eget. Donec nulla turpis, pellentesque eu mauris nec, tristique tempor ante. Sed id sem tincidunt, interdum eros nec, imperdiet lectus. Nulla facilisi. Nunc vulputate, arcu ut rhoncus finibus, velit nisi ultricies felis, sed cursus est est sit amet lacus. Fusce auctor tincidunt imperdiet. Suspendisse at consectetur leo. Integer vel tempor velit, ut efficitur diam. Duis mattis elit eget felis pharetra, vel sagittis mauris hendrerit. In hac habitasse platea dictumst.</p>]]></content>
+                    <tags><![CDATA[2535]]></tags>
+                  </item>
+                  <item link_title="Article 3" path_part="article-3" parent="blog">
+                    <title><![CDATA[Article 3]]></title>
+                    <image><![CDATA[https://nq4q3441.media.zestyio.com/pexels-lean--jacobs-1461876.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                    <image_alt><![CDATA[bunny]]></image_alt>
+                    <date><![CDATA[2020-08-04]]></date>
+                    <sample_datetime_field><![CDATA[]]></sample_datetime_field>
+                    <content><![CDATA[<p>Duis vitae rhoncus diam, ut dapibus risus. Nulla non dolor vulputate, aliquet nisi dignissim, pharetra nulla. Morbi mi felis, iaculis non venenatis ac, venenatis nec ante. Ut justo augue, sollicitudin vitae luctus vitae, ornare quis elit. Nullam vulputate mattis ultrices. Nullam eu condimentum dolor. Pellentesque sit amet molestie elit. Nullam vitae risus velit.</p>
+                    <p>Donec vel aliquam turpis. Nam auctor tristique tempus. Pellentesque auctor quam quis odio interdum interdum. Sed vulputate hendrerit dui, vitae faucibus purus mattis eget. Nullam id varius massa. Proin malesuada semper pretium. Quisque mi lectus, volutpat at libero sed, sagittis dignissim augue. Aenean a tincidunt erat. Mauris maximus bibendum rhoncus. Donec sit amet venenatis massa. Donec diam mi, fringilla id dui in, laoreet consectetur justo. Nam elit ante, convallis quis enim sed, tincidunt blandit ipsum.</p>
+                    <p>Nunc ut dolor scelerisque, placerat ex non, interdum mi. Quisque at eleifend lorem, et elementum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum mattis ultrices. Etiam posuere nibh magna, vitae efficitur nisi dictum eget. Donec nulla turpis, pellentesque eu mauris nec, tristique tempor ante. Sed id sem tincidunt, interdum eros nec, imperdiet lectus. Nulla facilisi. Nunc vulputate, arcu ut rhoncus finibus, velit nisi ultricies felis, sed cursus est est sit amet lacus. Fusce auctor tincidunt imperdiet. Suspendisse at consectetur leo. Integer vel tempor velit, ut efficitur diam. Duis mattis elit eget felis pharetra, vel sagittis mauris hendrerit. In hac habitasse platea dictumst.</p>
+                    <p>Quisque sit amet auctor lectus, eu vestibulum odio. Cras id purus neque. Vivamus ut tempus elit. Sed finibus, urna eget elementum euismod, urna velit pretium neque, cursus posuere nisl orci sit amet nisi. Nunc non massa sit amet turpis placerat dignissim. Sed vulputate condimentum augue, quis viverra urna elementum nec. Proin tellus felis, varius nec rhoncus non, molestie at ante.</p>
+                    <p>Quisque luctus dictum ultrices. Vestibulum libero lacus, sodales quis porta vitae, sodales in erat. Mauris lectus nibh, rutrum non magna a, convallis sagittis libero. Sed sed nisl in lacus cursus scelerisque. In mauris orci, fermentum ut ipsum in, rhoncus consectetur lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>]]></content>
+                    <tags><![CDATA[]]></tags>
+                  </item>
+                </items>
+            </pageset>
+
+            <!-- END BLOG -->
+
+            <!-- 7. OUR SERVICES -->
+            <templateset name="our_services" name_friendly="Our Services" view="our_services">
+                <fields>
+                    <text name="title" name_friendly="Title" />
+                    <images name="image" name_friendly="Image" limit="1" />
+                    <wysiwyg_advanced name="content" name_friendly="Content"  />
+                    <yes_no name="display_testimonials" name_friendly="Display Testimonials (For showing the Testimonial's carousel in the Homepage, click Yes or No)" options="0:No;1:Yes;" />
+                </fields>
+                <items>
+                    <item link_title="Services" path_part="our-services">
+                        <title><![CDATA[Our Services]]></title>
+                        <image><![CDATA[https://nq4q3441.media.zestyio.com/chunlea-ju-HN3-ehlNwsc-unsplash.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                        <content><![CDATA[<h1>Learn about our services!</h1>
+                        <p>Donec vel aliquam turpis. Nam auctor tristique tempus. Pellentesque auctor quam quis odio interdum interdum. Sed vulputate hendrerit dui, vitae faucibus purus mattis eget. Nullam id varius massa. Proin malesuada semper pretium. Quisque mi lectus, volutpat at libero sed, sagittis dignissim augue. Aenean a tincidunt erat. Mauris maximus bibendum rhoncus. Donec sit amet venenatis massa. Donec diam mi, fringilla id dui in, laoreet consectetur justo. Nam elit ante, convallis quis enim sed, tincidunt blandit ipsum.</p>]]>
+                      </content>
+                        <display_testimonials><![CDATA[1]]></display_testimonials>
+                    </item>
+                </items>
+            </templateset>
+            <!-- Services Dataset -->
+            <dataset name="services" name_friendly="Services" parent_item="our-services">
+                <fields>
+                    <text name="title" name_friendly="Title" list="1" />
+                    <wysiwyg_advanced name="content" name_friendly="Content" list="1" />
+                    <sort name="sort_order" name_friendly="Sort Order" list="1" />
+                </fields>
+                <items>
+                  <item>
+                    <title><![CDATA[Service 1]]></title>
+                    <content><![CDATA[<p>Donec vel aliquam turpis. Nam auctor tristique tempus. Pellentesque auctor quam quis odio interdum interdum. Sed vulputate hendrerit dui, vitae faucibus purus mattis eget.&nbsp;</p>]]></content>
+                    <sort_order><![CDATA[1]]></sort_order>
+                  </item>
+                  <item>
+                    <title><![CDATA[Service 2]]></title>
+                    <content><![CDATA[<p>Nullam id varius massa. Proin malesuada semper pretium. Quisque mi lectus, volutpat at libero sed, sagittis dignissim augue. Aenean a tincidunt erat. Mauris maximus bibendum rhoncus. Donec sit amet venenatis massa. Donec diam mi, fringilla id dui in, laoreet consectetur justo. Nam elit ante, convallis quis enim sed, tincidunt blandit ipsum.</p>]]></content>
+                    <sort_order><![CDATA[2]]></sort_order>
+                  </item>
+                  <item>
+                    <title><![CDATA[Service 3]]></title>
+                    <content><![CDATA[<p>Nunc ut dolor scelerisque, placerat ex non, interdum mi. Quisque at eleifend lorem, et elementum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum mattis ultrices.&nbsp;</p>]]></content>
+                    <sort_order><![CDATA[3]]></sort_order>
+                  </item>
+                </items>
+            </dataset>
+            <!-- Services Dataset End -->
+            <!-- SERVICES END -->
+
+
+            <!-- 8. ABOUT US -->
+            <templateset name="about" name_friendly="About" view="about">
+                <fields>
+                    <text name="title" name_friendly="Title" />
+                    <images name="image" name_friendly="Image" limit="1" />
+                    <wysiwyg_advanced name="content" name_friendly="Content" />
+                    <text name="team_section_title" name_friendly="Team Section Title" />
+                    <yes_no name="display_testimonials" name_friendly="Display Testimonials (For showing the Testimonial's carousel in the Homepage, click Yes or No)" options="0:No;1:Yes;" />
+                </fields>
+                <items>
+                    <item link_title="About" path_part="about" parent_item="about">
+                        <title><![CDATA[About Us]]></title>
+                        <image><![CDATA[https://nq4q3441.media.zestyio.com/naassom-azevedo-Q_Sei-TqSlc-unsplash.f1cb27a519bdb5b6ed34049a5b86e317.jpg]]></image>
+                        <content><![CDATA[<h1>Learn about us!</h1>
+                          <p>Nulla et tincidunt eros. Praesent et urna et est placerat tempor. Nullam finibus sagittis venenatis. Aenean vel ante ac leo consequat finibus. Donec ultrices ultrices eleifend. Cras laoreet metus velit, et venenatis lorem ullamcorper a. Vivamus vestibulum orci a gravida placerat. Aliquam commodo sollicitudin sapien et placerat. Vestibulum imperdiet ultricies mi eget porta. In auctor leo et orci vestibulum interdum.</p>]]>
+                        </content>
+                        <team_section_title><![CDATA[Meet the team!]]></team_section_title>
+                        <display_testimonials><![CDATA[1]]></display_testimonials>
+                    </item>
+                </items>
+            </templateset>
+
+            <!-- About Us Datasets: Veterinarians -->
+            <dataset name="team1" name_friendly="Veterinarians" parent_item="about">
+              <fields>
+                <images name="image" name_friendly="Image" limit="1" />
+                <text name="name" name_friendly="Name" list="1" />
+                <text name="job_title" name_friendly="Job Title" list="1" />
+                <wysiwyg_advanced name="bio_content" name_friendly="Bio Content" list="1" />
+                <sort name="sort_order" name_friendly="Sort Order" list="1" />
+              </fields>
+              <items>
+                <item>
+                  <image><![CDATA[https://nq4q3441.media.zestyio.com/team-1.524d5ad14a9bf6029f63b835b6ad7702.jpg]]></image>
+                  <name><![CDATA[Will Barrow]]></name>
+                  <job_title><![CDATA[Veterinarian]]></job_title>
+                  <bio_content><![CDATA[<p>Curabitur felis magna, gravida sit amet nulla a, ultricies laoreet elit. Praesent viverra placerat tortor, vitae dapibus tortor commodo id. Sed ut dolor est. Quisque nec ligula placerat, pulvinar lectus quis, lacinia lacus. Quisque dictum pellentesque lacus, a porttitor neque porta ac. Sed rutrum augue vel iaculis lacinia. Morbi at felis sed arcu fermentum placerat eu eget quam. Morbi eget elit ullamcorper, suscipit urna ac, semper magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent volutpat neque urna, sit amet feugiat metus aliquet non.</p>]]></bio_content>
+                  <sort_order><![CDATA[1]]></sort_order>
+                </item>
+                <item>
+                  <image><![CDATA[https://nq4q3441.media.zestyio.com/team-2.524d5ad14a9bf6029f63b835b6ad7702.jpg]]></image>
+                  <name><![CDATA[Ursula Gurnmeister]]></name>
+                  <job_title><![CDATA[Veterinarian]]></job_title>
+                  <bio_content><![CDATA[<p>Morbi dignissim mi sed lacus viverra tempus. Ut commodo nisl et massa consectetur interdum. Phasellus dignissim erat sapien, nec vulputate lectus condimentum vitae. Donec id velit vel lectus rhoncus fringilla. Quisque maximus consectetur porttitor. Duis quam mi, tempor ut quam sit amet, tincidunt ullamcorper justo. Duis dapibus in elit at elementum. Sed ultrices finibus odio, a dapibus sapien placerat in. Etiam condimentum faucibus eros sed feugiat. Praesent eget tellus sagittis, dictum nulla et, mattis turpis. Quisque at odio ipsum.</p>
+                  <p>Nulla et tincidunt eros. Praesent et urna et est placerat tempor. Nullam finibus sagittis venenatis. Aenean vel ante ac leo consequat finibus. Donec ultrices ultrices eleifend. Cras laoreet metus velit, et venenatis lorem ullamcorper a. Vivamus vestibulum orci a gravida placerat. Aliquam commodo sollicitudin sapien et placerat. Vestibulum imperdiet ultricies mi eget porta. In auctor leo et orci vestibulum interdum.</p>]]></bio_content>
+                  <sort_order><![CDATA[2]]></sort_order>
+                </item>
+              </items>
+            </dataset>
+            <!-- Veterinarians End -->
+            <!-- About Us Datasets: Staff -->
+            <dataset name="team2" name_friendly="Staff" parent_item="about">
+                <fields>
+                  <images name="image" name_friendly="Image" limit="1" />
+                  <text name="name" name_friendly="Name" list="1" />
+                  <text name="job_title" name_friendly="Job Title" list="1" />
+                  <wysiwyg_advanced name="bio_content" name_friendly="Bio Content" list="1" />
+                  <sort name="sort_order" name_friendly="Sort Order" list="1" />
+                </fields>
+                <items>
+                  <item>
+                    <image><![CDATA[https://nq4q3441.media.zestyio.com/team-4.524d5ad14a9bf6029f63b835b6ad7702.jpg]]></image>
+                    <name><![CDATA[Linguina Nettlewater]]></name>
+                    <job_title><![CDATA[Technician]]></job_title>
+                    <bio_content><![CDATA[]]></bio_content>
+                    <sort_order><![CDATA[1]]></sort_order>
+                  </item>
+                  <item>
+                    <image><![CDATA[https://nq4q3441.media.zestyio.com/team-3.524d5ad14a9bf6029f63b835b6ad7702.jpg]]></image>
+                    <name><![CDATA[Jake Weary]]></name>
+                    <job_title><![CDATA[Technician]]></job_title>
+                    <bio_content><![CDATA[]]></bio_content>
+                    <sort_order><![CDATA[2]]></sort_order>
+                  </item>
+                  <item>
+                    <image><![CDATA[https://nq4q3441.media.zestyio.com/team-5.524d5ad14a9bf6029f63b835b6ad7702.jpg]]></image>
+                    <name><![CDATA[Dianne Ameter]]></name>
+                    <job_title><![CDATA[Intern]]></job_title>
+                    <bio_content><![CDATA[]]></bio_content>
+                    <sort_order><![CDATA[3]]></sort_order>
+                  </item>
+                </items>
+            </dataset>
+            <!-- Staff End -->
+            <!-- ABOUT US END  -->
+        </ingredients>
+    </plate>
