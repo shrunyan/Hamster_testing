@@ -6,7 +6,7 @@
             <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
             <meta content="width=device-width, initial-scale=1.0" name="viewport" />
             <meta data-scope="instance" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" rel="stylesheet" />
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
             <link data-scope="instance" href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
             <link data-scope="instance" href="https://cdn.jsdelivr.net/npm/remixicon@2.4.0/fonts/remixicon.css" rel="stylesheet" />
             <link crossorigin="anonymous" data-scope="instance" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.8.6/venobox.min.css" integrity="sha256-bM8BrA55gwp08P/y/prufMxRmr59ygZlXj/k3qDD6/o=" rel="stylesheet" />
