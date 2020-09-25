@@ -506,7 +506,7 @@
             <sort>3</sort>
             <edit_in_content>1</edit_in_content>
             <locked>0</locked>
-            <value>dark</value>
+            <value>8_dark</value>
             <options>
                 <option description="Primary" value="1_primary" />
                 <option description="Secondary" value="2_secondary" />
