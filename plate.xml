@@ -412,7 +412,7 @@
                 <option description="900" value="900" />
             </options>
         </dropdown>
-        <!-- HTML Elements Category:73 -->
+        <!-- HTML Elements Category:7 -->
         <text name="default_border_radius" name_friendly="Default Border Radius">
             <category>7</category>
             <description>The default curvature for borders around elements. Use px unit.</description>
