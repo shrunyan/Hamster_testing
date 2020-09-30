@@ -2744,13 +2744,13 @@ tr td:nth-child(3),tr th:nth-child(3) { /* I don't think they are 0 based */
     padding: 15px 10px;
     border-bottom: 1px solid lightgray;
     &:hover{
-      background: theme-color($subnav-link-hover-color);
+      background: theme-color($sidebar-link-hover-color);
        a {
-        color: $subnav-link-hover-color;
+        color: $sidebar-link-hover-color;
   }
     }
       a {
-        color: $sidebar-font-color;
+        color: $sidebar-text-color;
   }
   }
 }
