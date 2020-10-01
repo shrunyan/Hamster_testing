@@ -109,7 +109,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                theme-color("$text-color");/*zv*/
+$body-color:                $text-color;/*zv*/
 
 
 // Links
